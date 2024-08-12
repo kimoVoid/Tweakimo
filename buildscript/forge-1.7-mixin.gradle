@@ -28,6 +28,7 @@ dependencies {
 ext.outRefMapFile = "${tasks.compileJava.temporaryDir}/${project.modid}.mixin.refmap.json"
 
 jar {
+    archiveName = "HSMPCore-1.7.10.jar"
     manifest {
         attributes (
             'MixinConfigs': "${project.modid}.mixin.json",
