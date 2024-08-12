@@ -1,0 +1,16 @@
+[
+{
+  "modid": "${modid}",
+  "name": "HSMPCore",
+  "description": "General fixes/tweaks for 1.7.10 forge",
+  "version": "${version}",
+  "mcversion": "${minecraft_version}",
+  "url": "https://github.com/kimoVoid/hsmpcore",
+  "updateUrl": "",
+  "authorList": ["kimoVoid"],
+  "credits": "you, for existing :)",
+  "logoFile": "assets/hsmpcore/icon.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
