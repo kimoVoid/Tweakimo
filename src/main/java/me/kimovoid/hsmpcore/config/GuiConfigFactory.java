@@ -46,8 +46,12 @@ public class GuiConfigFactory implements IModGuiFactory {
             elements.addAll((new ConfigElement(configuration.getCategory("general"))).getChildElements());
 
             ConfigCategory scoreboard = configuration.getCategory("scoreboard").setLanguageKey("hsmpcore.config.scoreboard");
-            scoreboard.setComment("Sidebar rendering settings");
+            scoreboard.setComment("Configure in-game sidebar");
             elements.add(new ConfigElement(scoreboard));
+
+            ConfigCategory freecam = configuration.getCategory("freecam").setLanguageKey("hsmpcore.config.freecam");
+            freecam.setComment("Configure free cam mode");
+            elements.add(new ConfigElement(freecam));
 
             return elements;
         }

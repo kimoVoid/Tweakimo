@@ -28,6 +28,11 @@ public class Config {
     public int scoreboardLimit = 15;
     public String scoreboardColor = "red";
 
+    public boolean freeCamInteract = false;
+    public double freeCamFlyAcceleration = 40;
+    public double freeCamFlyMaxSpeed = 20;
+    public double freeCamFlySlowdownFactor = 0.01;
+
     public Config(File path) {
         config = new Configuration(path);
         this.sync(true);
@@ -43,19 +48,17 @@ public class Config {
         this.centerInventoryEffects = config.getBoolean("centerInventoryEffects", Configuration.CATEGORY_GENERAL, true, "Centers inventory with potion effects");
         this.alwaysSprint = config.getBoolean("alwaysSprint", Configuration.CATEGORY_GENERAL, false, "Automatically sprint when moving forward");
         this.transparentConfigs = config.getBoolean("transparentConfigs", Configuration.CATEGORY_GENERAL, true, "Makes all Forge mod config GUIs transparent");
-
-        this.enableScoreboard = config.getBoolean("enableScoreboard", "scoreboard", true, "Sidebar rendering");
-        this.scoreboardTotal = config.getBoolean("scoreboardTotal", "scoreboard", true, "Sidebar score total");
-        this.scoreboardShadow = config.getBoolean("scoreboardShadow", "scoreboard", false, "Sidebar text shadow");
-        this.scoreboardHighlightName = config.getBoolean("scoreboardHighlightName", "scoreboard", false, "Highlight own name in the sidebar");
-        this.hideScoreboardInF3 = config.getBoolean("hideScoreboardInF3", "scoreboard", true, "Hides sidebar when debug screen is open");
-
         Property flySpeedConfig = config.get(Configuration.CATEGORY_GENERAL, "flySpeed", 1.0, "Flight speed while holding SPRINT")
                 .setMinValue(1.0)
                 .setMaxValue(10.0)
                 .setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
         this.flySpeed = (float) flySpeedConfig.getDouble();
 
+        this.enableScoreboard = config.getBoolean("enableScoreboard", "scoreboard", true, "Sidebar rendering");
+        this.scoreboardTotal = config.getBoolean("scoreboardTotal", "scoreboard", true, "Sidebar score total");
+        this.scoreboardShadow = config.getBoolean("scoreboardShadow", "scoreboard", false, "Sidebar text shadow");
+        this.scoreboardHighlightName = config.getBoolean("scoreboardHighlightName", "scoreboard", false, "Highlight own name in the sidebar");
+        this.hideScoreboardInF3 = config.getBoolean("hideScoreboardInF3", "scoreboard", true, "Hides sidebar when debug screen is open");
         Property scoreLimitConfig = config.get("scoreboard", "scoreboardLimit", 15, "Sidebar lines limit")
                 .setMinValue(1)
                 .setMaxValue(50)
@@ -70,6 +73,24 @@ public class Config {
         Property scoreColorConfig = config.get("scoreboard", "scoreboardColor", EnumChatFormatting.RED + "red", "Sidebar score color")
                 .setValidValues(colorNames.toArray(new String[0]));
         this.scoreboardColor = scoreColorConfig.getString().substring(2);
+
+        this.freeCamInteract = config.getBoolean("freeCamInteract", "freecam", false, "Allows you to interact with blocks/entities in free cam");
+
+        Property freeCamFlyAccelConfig = config.get("freecam", "freeCamFlyAcceleration", 40.0, "Free cam flight speed acceleration")
+                .setMinValue(0.0)
+                .setMaxValue(100.0)
+                .setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
+        this.freeCamFlyAcceleration = freeCamFlyAccelConfig.getDouble();
+        Property freeCamFlyMaxSpeedConfig = config.get("freecam", "freeCamFlyMaxSpeed", 20.0, "Free cam flight max speed")
+                .setMinValue(0.0)
+                .setMaxValue(50.0)
+                .setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
+        this.freeCamFlyMaxSpeed = freeCamFlyMaxSpeedConfig.getDouble();
+        Property freeCamFlySlowdownConfig = config.get("freecam", "freeCamFlySlowdownFactor", 0.01, "Free cam flight speed slowdown factor")
+                .setMinValue(0.0)
+                .setMaxValue(0.1)
+                .setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
+        this.freeCamFlySlowdownFactor = freeCamFlySlowdownConfig.getDouble();
 
         if (config.hasChanged()) {
             config.save();

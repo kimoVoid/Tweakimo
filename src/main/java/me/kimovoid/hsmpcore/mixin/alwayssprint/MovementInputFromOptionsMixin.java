@@ -1,6 +1,7 @@
 package me.kimovoid.hsmpcore.mixin.alwayssprint;
 
 import me.kimovoid.hsmpcore.HSMPCore;
+import me.kimovoid.hsmpcore.freecam.FreeCamController;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.MovementInputFromOptions;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +20,7 @@ public class MovementInputFromOptionsMixin {
             )
     )
     private void doAlwaysSprint(CallbackInfo ci) {
-        if (HSMPCore.CONFIG.alwaysSprint) {
+        if (HSMPCore.CONFIG.alwaysSprint && !FreeCamController.instance.isActive()) {
             Minecraft.getMinecraft().thePlayer.setSprinting(true);
         }
     }
