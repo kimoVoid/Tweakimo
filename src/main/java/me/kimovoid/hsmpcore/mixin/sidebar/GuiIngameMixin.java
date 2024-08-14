@@ -41,7 +41,10 @@ public abstract class GuiIngameMixin extends Gui {
             collection.add(totalScore);
         }
 
-        collection = collection.stream().skip(Math.abs(collection.size() - (HSMPCore.CONFIG.scoreboardLimit + (HSMPCore.CONFIG.scoreboardTotal ? 1 : 0)))).collect(Collectors.toList());
+        int limit = HSMPCore.CONFIG.scoreboardLimit + (HSMPCore.CONFIG.scoreboardTotal ? 1 : 0);
+        if (collection.size() > limit) {
+            collection = collection.stream().skip(Math.abs(collection.size() - limit)).collect(Collectors.toList());
+        }
 
         int width = fr.getStringWidth(objective.getDisplayName());
         String s;
