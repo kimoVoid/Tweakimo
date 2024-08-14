@@ -1,15 +1,9 @@
 package me.kimovoid.hsmpcore.freecam;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.InputEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 
 public class FreeCamTickEvents {
-
-    @SubscribeEvent
-    public void onKeyInputEvent(InputEvent.KeyInputEvent event) {
-        FreeCamController.instance.onKeyInput();
-    }
 
     @SubscribeEvent
     public void onRenderTick(TickEvent.RenderTickEvent event) {

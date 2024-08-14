@@ -10,6 +10,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import me.kimovoid.hsmpcore.config.Config;
 import me.kimovoid.hsmpcore.freecam.FreeCamEvents;
 import me.kimovoid.hsmpcore.freecam.FreeCamTickEvents;
+import me.kimovoid.hsmpcore.keybinding.KeyBindingHandler;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
@@ -22,7 +23,9 @@ public class HSMPCore {
     public static Logger LOGGER;
     public static Config CONFIG;
     public static HSMPCore INSTANCE;
+
     public static final KeyBinding toggleFreeCam = new KeyBinding("key.hsmpcore.freecam.toggle", Keyboard.KEY_F6, "key.categories.misc");
+    public static final KeyBinding toggleFakeSneak = new KeyBinding("key.hsmpcore.fakesneak.toggle", Keyboard.KEY_RSHIFT, "key.categories.misc");
 
     public static final String MODID = "hsmpcore";
     public static final String VERSION = "@VERSION@";
@@ -37,6 +40,7 @@ public class HSMPCore {
         ClientRegistry.registerKeyBinding(toggleFreeCam);
         FMLCommonHandler.instance().bus().register(this);
         FMLCommonHandler.instance().bus().register(new FreeCamTickEvents());
+        FMLCommonHandler.instance().bus().register(new KeyBindingHandler());
         MinecraftForge.EVENT_BUS.register(new FreeCamEvents());
     }
 

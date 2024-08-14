@@ -17,5 +17,8 @@
     "inventorycenter.InventoryEffectRendererMixin",
     "sidebar.GuiIngameMixin",
     "villagercrashfix.GuiMerchantMixin"
+  ],
+  "mixins": [
+    "fakesneak.EntityMixin"
   ]
 }

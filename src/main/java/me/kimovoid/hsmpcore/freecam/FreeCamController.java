@@ -36,27 +36,6 @@ public class FreeCamController {
         return active;
     }
 
-    public void toggle() {
-        if (active) {
-            disable();
-        } else {
-            enable();
-        }
-    }
-
-    public void onKeyInput() {
-        if (mc.thePlayer == null) {
-            return;
-        }
-        if (mc.currentScreen != null) {
-            return;
-        }
-        if (HSMPCore.toggleFreeCam.getIsKeyPressed()) {
-            toggle();
-            mc.ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(EnumChatFormatting.GRAY + "Free cam " + (this.isActive() ? "enabled" : "disabled")));
-        }
-    }
-
     public void onMouseTurn(double yRot, double xRot) {
         this.xRot += (float) xRot * 0.15F;
         this.yRot += (float) yRot * 0.15F;
