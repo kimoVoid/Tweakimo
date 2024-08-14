@@ -26,7 +26,7 @@ public class KeyBindingHandler {
         }
 
         if (HSMPCore.toggleFreeCam.getIsKeyPressed()) {
-            FreeCamController.instance.active = !FreeCamController.instance.active;
+            FreeCamController.instance.toggle();
             printToggleMessage("Free cam", FreeCamController.instance.isActive());
         }
 

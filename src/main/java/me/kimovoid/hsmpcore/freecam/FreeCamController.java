@@ -36,6 +36,14 @@ public class FreeCamController {
         return active;
     }
 
+    public void toggle() {
+        if (this.active) {
+            this.disable();
+        } else {
+            this.enable();
+        }
+    }
+
     public void onMouseTurn(double yRot, double xRot) {
         this.xRot += (float) xRot * 0.15F;
         this.yRot += (float) yRot * 0.15F;
