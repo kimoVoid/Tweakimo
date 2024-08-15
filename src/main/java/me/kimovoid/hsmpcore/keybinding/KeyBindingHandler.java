@@ -7,29 +7,31 @@ import me.kimovoid.hsmpcore.fakesneak.FakeSneakController;
 import me.kimovoid.hsmpcore.freecam.FreeCamController;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumChatFormatting;
+import org.lwjgl.input.Keyboard;
 
 public class KeyBindingHandler {
 
     @SubscribeEvent
-    public void onKeyInputEvent(InputEvent.KeyInputEvent event) {
+    public void onKeyInputEvent(InputEvent.KeyInputEvent ev) {
         this.handleKeyBindings();
     }
 
     public void handleKeyBindings() {
         Minecraft mc = Minecraft.getMinecraft();
-        if (mc.thePlayer == null) {
-            return;
-        }
-        if (mc.currentScreen != null) {
+        int key = Keyboard.getEventKey();
+
+        if (mc.thePlayer == null
+                || mc.currentScreen != null
+                || Keyboard.getEventKeyState()) {
             return;
         }
 
-        if (HSMPCore.toggleFreeCam.getIsKeyPressed()) {
+        if (key == HSMPCore.toggleFreeCam.getKeyCode()) {
             FreeCamController.instance.toggle();
             printToggleMessage("Free cam", FreeCamController.instance.isActive());
         }
 
-        if (HSMPCore.toggleFakeSneak.getIsKeyPressed()) {
+        if (key == HSMPCore.toggleFakeSneak.getKeyCode()) {
             FakeSneakController.instance.active = !FakeSneakController.instance.active;
             printToggleMessage("Fake sneaking", FakeSneakController.instance.active);
         }
