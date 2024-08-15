@@ -9,6 +9,7 @@
     "breakparticles.RenderGlobalMixin",
     "config.GuiSlotMixin",
     "entityjitterfix.EntityMixin",
+    "fakesneak.EntityMixin",
     "flyspeed.MovementInputFromOptionsMixin",
     "freecam.EntityPlayerSPMixin",
     "freecam.EntityRendererMixin",
@@ -17,8 +18,5 @@
     "inventorycenter.InventoryEffectRendererMixin",
     "sidebar.GuiIngameMixin",
     "villagercrashfix.GuiMerchantMixin"
-  ],
-  "mixins": [
-    "fakesneak.EntityMixin"
   ]
 }

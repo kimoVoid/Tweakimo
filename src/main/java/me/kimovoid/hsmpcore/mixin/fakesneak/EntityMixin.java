@@ -3,22 +3,17 @@ package me.kimovoid.hsmpcore.mixin.fakesneak;
 import me.kimovoid.hsmpcore.fakesneak.FakeSneakController;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.Slice;
 
 @Mixin(Entity.class)
 public class EntityMixin {
 
-    @Redirect(method = "moveEntity",
-            slice = @Slice(
-                    from = @At(
-                            value = "FIELD",
-                            target = "Lnet/minecraft/entity/Entity;onGround:Z",
-                            ordinal = 0
-                    )
-            ),
+    @Redirect(
+            method = "moveEntity",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/entity/Entity;isSneaking()Z",
@@ -31,5 +26,21 @@ public class EntityMixin {
         }
 
         return entity.isSneaking();
+    }
+
+    /* Thank you Pine for helping me out with this <3 */
+    @ModifyVariable(
+            method = "moveEntity",
+            name = "flag",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/World;getCollidingBoundingBoxes(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/AxisAlignedBB;)Ljava/util/List;",
+                    ordinal = 3,
+                    shift = At.Shift.BEFORE
+            )
+    )
+    private boolean setFlag(boolean flag) {
+        Entity entity = (Entity) (Object) this;
+        return entity.onGround && entity.isSneaking() && entity instanceof EntityPlayer;
     }
 }
