@@ -36,8 +36,10 @@ public class HSMPCore {
         LOGGER = LogManager.getLogger("HSMPCore");
         CONFIG = new Config(event.getSuggestedConfigurationFile());
         LOGGER.info("This is so Historical!");
-
+        
         ClientRegistry.registerKeyBinding(toggleFreeCam);
+        ClientRegistry.registerKeyBinding(toggleFakeSneak);
+
         FMLCommonHandler.instance().bus().register(this);
         FMLCommonHandler.instance().bus().register(new FreeCamTickEvents());
         FMLCommonHandler.instance().bus().register(new KeyBindingHandler());
