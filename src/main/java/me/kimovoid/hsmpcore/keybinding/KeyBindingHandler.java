@@ -6,7 +6,6 @@ import me.kimovoid.hsmpcore.HSMPCore;
 import me.kimovoid.hsmpcore.fakesneak.FakeSneakController;
 import me.kimovoid.hsmpcore.freecam.FreeCamController;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
 public class KeyBindingHandler {
@@ -37,8 +36,6 @@ public class KeyBindingHandler {
     }
 
     private void printToggleMessage(String type, boolean active) {
-        Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(
-                String.format("%s%s has been %s", EnumChatFormatting.GRAY, type, active ? "enabled" : "disabled")
-        ));
+        Minecraft.getMinecraft().ingameGUI.func_110326_a(String.format("%s has been %s%s", type, active ? EnumChatFormatting.GREEN : EnumChatFormatting.RED, active ? "enabled" : "disabled"), false);
     }
 }
