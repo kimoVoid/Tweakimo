@@ -18,6 +18,7 @@ public class Config {
     public boolean centerInventoryEffects = true;
     public boolean alwaysSprint = false;
     public boolean transparentConfigs = false;
+    public boolean lavaVisibility = false;
     public float flySpeed = 1.0f;
 
     public boolean enableScoreboard = true;
@@ -48,6 +49,7 @@ public class Config {
         this.centerInventoryEffects = config.getBoolean("centerInventoryEffects", Configuration.CATEGORY_GENERAL, true, "Centers inventory with potion effects");
         this.alwaysSprint = config.getBoolean("alwaysSprint", Configuration.CATEGORY_GENERAL, false, "Automatically sprint when moving forward");
         this.transparentConfigs = config.getBoolean("transparentConfigs", Configuration.CATEGORY_GENERAL, true, "Makes all Forge mod config GUIs transparent");
+        this.lavaVisibility = config.getBoolean("lavaVisibility", Configuration.CATEGORY_GENERAL, false, "Allows you to see through the lava with Fire Resistance");
         Property flySpeedConfig = config.get(Configuration.CATEGORY_GENERAL, "flySpeed", 1.0, "Flight speed while holding SPRINT")
                 .setMinValue(1.0)
                 .setMaxValue(10.0)
