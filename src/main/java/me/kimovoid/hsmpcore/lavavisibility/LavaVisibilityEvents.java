@@ -14,13 +14,13 @@ public class LavaVisibilityEvents {
     @SubscribeEvent
     public void onFogRender(EntityViewRenderEvent.FogDensity event) {
         EntityPlayerSP player = Minecraft.getMinecraft().thePlayer;
-        if ((HSMPCore.CONFIG.lavaVisibility && canSeeThroughLava(player)) || player.capabilities.isCreativeMode) {
+        if (HSMPCore.CONFIG.lavaVisibility && canSeeThroughLava(player)) {
             event.density = player.capabilities.isCreativeMode ? 0.0f : 0.03f;
             event.setCanceled(true);
         }
     }
 
     public boolean canSeeThroughLava(EntityPlayer player) {
-        return player.isInsideOfMaterial(Material.lava) && player.isPotionActive(Potion.fireResistance);
+        return player.isInsideOfMaterial(Material.lava) && (player.isPotionActive(Potion.fireResistance) || player.capabilities.isCreativeMode);
     }
 }
