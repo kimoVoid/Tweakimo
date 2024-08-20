@@ -13,11 +13,10 @@ Mostly everything can be configured under `Mod Options`.
 - ⭐ `sidebar` - Extensive sidebar configuration & fix. Change stuff like player limit, score color, text rendering, etc.
 - `alwaysSprint` - Self explanatory.
 - `blockBreakingParticles` - Allows you to disable block breaking particles for digging.
+- `centerInventoryEffects` - Centers creative/survival inventory with effects.
 - `flySpeed` - Set creative (or free cam) flying speed while holding SPRINT.
 - `lavaVisibility` - Lets you see in lava while having Fire Resistance effect.
-- `alwaysSprint` - Self explanatory.
 - `transparentConfigs` - Makes Forge config GUIs transparent.
-- `centerInventoryEffects` - Centers creative/survival inventory with effects.
 
 ## Dependency
 > [!IMPORTANT]
