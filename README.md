@@ -1,5 +1,4 @@
 # Tweakimo 1.7.10
-### (formerly known as HSMPCore)
 A small Forge mod that uses mixins to add various fixes/tweaks to the game. This mod was made because I was tired of having tons of small mods that only change 1 thing each.
 
 <b>🔗 [HSMP Discord](https://discord.gg/4ySWkM2)</b>
