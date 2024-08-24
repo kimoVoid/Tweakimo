@@ -12,6 +12,7 @@ import me.kimovoid.tweakimo.freecam.FreeCamEvents;
 import me.kimovoid.tweakimo.freecam.FreeCamTickEvents;
 import me.kimovoid.tweakimo.keybinding.KeyBindingHandler;
 import me.kimovoid.tweakimo.lavavisibility.LavaVisibilityEvents;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
@@ -31,12 +32,14 @@ public class Tweakimo {
     public static final String MODID = "tweakimo";
     public static final String VERSION = "@VERSION@";
 
+    private ServerData lastServer;
+
     @EventHandler
     public void init(FMLPreInitializationEvent event) {
         INSTANCE = this;
         LOGGER = LogManager.getLogger("Tweakimo");
         CONFIG = new Config(event.getSuggestedConfigurationFile());
-        
+
         ClientRegistry.registerKeyBinding(toggleFreeCam);
         ClientRegistry.registerKeyBinding(toggleFakeSneak);
 
@@ -52,5 +55,13 @@ public class Tweakimo {
         if (MODID.equals(event.modID)) {
             CONFIG.sync(false);
         }
+    }
+
+    public ServerData getLastServer() {
+        return this.lastServer;
+    }
+
+    public void setLastServer(ServerData server) {
+        this.lastServer = server;
     }
 }

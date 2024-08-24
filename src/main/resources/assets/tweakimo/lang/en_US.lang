@@ -1,4 +1,5 @@
 tweakimo.config.scoreboard=Sidebar Settings
 tweakimo.config.freecam=Free Cam Settings
+tweakimo.gui.reconnect=Reconnect
 key.tweakimo.freecam.toggle=Toggle Free Cam
 key.tweakimo.fakesneak.toggle=Toggle Fake Sneak

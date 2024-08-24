@@ -21,6 +21,8 @@ public class Config {
     public boolean transparentConfigs = false;
     public boolean lavaVisibility = false;
     public float flySpeed = 1.0f;
+    public boolean reconnectButton = false;
+    public boolean shortTab = false;
 
     public boolean enableScoreboard = true;
     public boolean scoreboardTotal = true;
@@ -57,6 +59,8 @@ public class Config {
                 .setMaxValue(10.0)
                 .setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
         this.flySpeed = (float) flySpeedConfig.getDouble();
+        this.reconnectButton = config.getBoolean("reconnectButton", Configuration.CATEGORY_GENERAL, false, "Adds a reconnect button when you're\ndisconnected from a server");
+        this.shortTab = config.getBoolean("shortTab", Configuration.CATEGORY_GENERAL, false, "Removes empty player list slots");
 
         this.enableScoreboard = config.getBoolean("enableScoreboard", "scoreboard", true, "Sidebar rendering");
         this.scoreboardTotal = config.getBoolean("scoreboardTotal", "scoreboard", true, "Sidebar score total");
