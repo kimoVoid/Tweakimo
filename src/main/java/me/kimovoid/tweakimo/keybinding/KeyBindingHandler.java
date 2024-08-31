@@ -28,16 +28,16 @@ public class KeyBindingHandler {
 
         if (key == Tweakimo.toggleFreeCam.getKeyCode()) {
             FreeCamController.instance.toggle();
-            printToggleMessage("Free cam", FreeCamController.instance.isActive());
+            printToggleMessage("free cam", FreeCamController.instance.isActive());
         }
 
         if (key == Tweakimo.toggleFakeSneak.getKeyCode()) {
             FakeSneakController.instance.active = !FakeSneakController.instance.active;
-            printToggleMessage("Fake sneaking", FakeSneakController.instance.active);
+            printToggleMessage("fake sneaking", FakeSneakController.instance.active);
         }
     }
 
     private void printToggleMessage(String type, boolean active) {
-        Minecraft.getMinecraft().ingameGUI.func_110326_a(String.format("%s has been %s%s", type, active ? EnumChatFormatting.GREEN : EnumChatFormatting.RED, active ? "enabled" : "disabled"), false);
+        Minecraft.getMinecraft().ingameGUI.func_110326_a(String.format("Toggled %s %s%s", type, active ? EnumChatFormatting.GREEN : EnumChatFormatting.RED, active ? "ON" : "OFF"), false);
     }
 }
