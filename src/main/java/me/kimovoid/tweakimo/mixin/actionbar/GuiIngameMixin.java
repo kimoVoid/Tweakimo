@@ -29,6 +29,6 @@ public abstract class GuiIngameMixin extends GuiIngame {
             return fr.drawString(str, x, 32, color);
         }
 
-        return fr.drawString(str, x, y - (this.mc.playerController.shouldDrawHUD() && this.mc.thePlayer.getTotalArmorValue() != 0 ? 10 : 0), color);
+        return fr.drawString(str, x, y - 20, color);
     }
 }
