@@ -15,7 +15,15 @@ Mostly everything can be configured under `Mod Options`.
 - `centerInventoryEffects` - Centers creative/survival inventory with effects.
 - `flySpeed` - Set creative (or free cam) flying speed while holding SPRINT.
 - `lavaVisibility` - Lets you see in lava while having Fire Resistance effect.
+- `reconnectButton` - Adds a "Reconnect" button when you get disconnected from the server.
+- `shortTab` - Removes empty slots in player list, making it shorter.
+- `skipEndCredits` - Removes credits screen when you go through an end portal.
 - `transparentConfigs` - Makes Forge config GUIs transparent.
+
+### Miscellaneous fixes (non-configurable):
+- Scoreboards now render if they have more than 15 players.
+- Action bar doesn't overlap with HUD, looks like it does in 1.8+.
+- Fixed villager GUI crashing when you click the "next" button too fast.
 
 ## Dependency
 > [!IMPORTANT]
