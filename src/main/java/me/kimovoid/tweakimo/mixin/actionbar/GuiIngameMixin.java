@@ -29,6 +29,6 @@ public abstract class GuiIngameMixin extends GuiIngame {
             return fr.drawString(str, x, 32, color);
         }
 
-        return fr.drawString(str, x, y - 20, color);
+        return fr.drawString(str, x, y - 18, color);
     }
 }
