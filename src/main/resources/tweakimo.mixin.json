@@ -21,6 +21,7 @@
     "reconnectbutton.MinecraftMixin",
     "shorttab.GuiIngameMixin",
     "sidebar.GuiIngameMixin",
+    "skipendcredits.NetHandlerPlayClientMixin",
     "villagercrashfix.GuiMerchantMixin"
   ]
 }
