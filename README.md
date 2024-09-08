@@ -15,6 +15,7 @@ Mostly everything can be configured under `Mod Options`.
 - `centerInventoryEffects` - Centers creative/survival inventory with effects.
 - `flySpeed` - Set creative (or free cam) flying speed while holding SPRINT.
 - `lavaVisibility` - Lets you see in lava while having Fire Resistance effect.
+- `pickFromInventory` - Pick items (MIDDLE-CLICK) from your inventory, not just your hotbar.
 - `reconnectButton` - Adds a "Reconnect" button when you get disconnected from the server.
 - `shortTab` - Removes empty slots in player list, making it shorter.
 - `skipEndCredits` - Removes credits screen when you go through an end portal.

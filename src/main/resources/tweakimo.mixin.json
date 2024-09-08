@@ -23,5 +23,8 @@
     "sidebar.GuiIngameMixin",
     "skipendcredits.NetHandlerPlayClientMixin",
     "villagercrashfix.GuiMerchantMixin"
+  ],
+  "mixins": [
+    "pickfrominventory.ForgeHooksMixin"
   ]
 }
