@@ -1,15 +1,15 @@
-package me.kimovoid.tweakimo.keybinding;
+package me.kimovoid.tweakimo.listeners;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.InputEvent;
 import me.kimovoid.tweakimo.Tweakimo;
-import me.kimovoid.tweakimo.fakesneak.FakeSneakController;
-import me.kimovoid.tweakimo.freecam.FreeCamController;
+import me.kimovoid.tweakimo.controllers.FakeSneakController;
+import me.kimovoid.tweakimo.controllers.FreeCamController;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumChatFormatting;
 import org.lwjgl.input.Keyboard;
 
-public class KeyBindingHandler {
+public class KeyBindingEvents {
 
     @SubscribeEvent
     public void onKeyInputEvent(InputEvent.KeyInputEvent ev) {

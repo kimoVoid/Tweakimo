@@ -1,4 +1,4 @@
-package me.kimovoid.tweakimo.freecam;
+package me.kimovoid.tweakimo.controllers;
 
 import me.kimovoid.tweakimo.Tweakimo;
 import me.kimovoid.tweakimo.util.Quaternion;

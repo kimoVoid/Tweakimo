@@ -1,4 +1,4 @@
-package me.kimovoid.tweakimo.fakesneak;
+package me.kimovoid.tweakimo.controllers;
 
 public class FakeSneakController {
 

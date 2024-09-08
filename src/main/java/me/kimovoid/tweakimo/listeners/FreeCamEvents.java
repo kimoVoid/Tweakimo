@@ -1,7 +1,8 @@
-package me.kimovoid.tweakimo.freecam;
+package me.kimovoid.tweakimo.listeners;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import me.kimovoid.tweakimo.Tweakimo;
+import me.kimovoid.tweakimo.controllers.FreeCamController;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.MouseEvent;
 import net.minecraftforge.client.event.RenderBlockOverlayEvent;

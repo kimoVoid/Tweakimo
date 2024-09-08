@@ -1,4 +1,4 @@
-package me.kimovoid.tweakimo.lavavisibility;
+package me.kimovoid.tweakimo.listeners;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import me.kimovoid.tweakimo.Tweakimo;

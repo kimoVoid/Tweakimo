@@ -1,7 +1,8 @@
-package me.kimovoid.tweakimo.freecam;
+package me.kimovoid.tweakimo.listeners;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import me.kimovoid.tweakimo.controllers.FreeCamController;
 
 public class FreeCamTickEvents {
 

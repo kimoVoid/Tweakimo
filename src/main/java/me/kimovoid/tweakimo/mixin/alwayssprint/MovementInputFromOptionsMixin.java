@@ -1,7 +1,7 @@
 package me.kimovoid.tweakimo.mixin.alwayssprint;
 
 import me.kimovoid.tweakimo.Tweakimo;
-import me.kimovoid.tweakimo.freecam.FreeCamController;
+import me.kimovoid.tweakimo.controllers.FreeCamController;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.MovementInputFromOptions;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,6 +1,6 @@
 package me.kimovoid.tweakimo.mixin.fakesneak;
 
-import me.kimovoid.tweakimo.fakesneak.FakeSneakController;
+import me.kimovoid.tweakimo.controllers.FakeSneakController;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

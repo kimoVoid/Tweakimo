@@ -8,10 +8,10 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import me.kimovoid.tweakimo.config.Config;
-import me.kimovoid.tweakimo.freecam.FreeCamEvents;
-import me.kimovoid.tweakimo.freecam.FreeCamTickEvents;
-import me.kimovoid.tweakimo.keybinding.KeyBindingHandler;
-import me.kimovoid.tweakimo.lavavisibility.LavaVisibilityEvents;
+import me.kimovoid.tweakimo.listeners.FreeCamEvents;
+import me.kimovoid.tweakimo.listeners.FreeCamTickEvents;
+import me.kimovoid.tweakimo.listeners.KeyBindingEvents;
+import me.kimovoid.tweakimo.listeners.LavaVisibilityEvents;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
@@ -45,7 +45,7 @@ public class Tweakimo {
 
         FMLCommonHandler.instance().bus().register(this);
         FMLCommonHandler.instance().bus().register(new FreeCamTickEvents());
-        FMLCommonHandler.instance().bus().register(new KeyBindingHandler());
+        FMLCommonHandler.instance().bus().register(new KeyBindingEvents());
         MinecraftForge.EVENT_BUS.register(new FreeCamEvents());
         MinecraftForge.EVENT_BUS.register(new LavaVisibilityEvents());
     }

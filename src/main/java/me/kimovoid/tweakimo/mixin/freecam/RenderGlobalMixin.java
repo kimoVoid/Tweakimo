@@ -1,6 +1,6 @@
 package me.kimovoid.tweakimo.mixin.freecam;
 
-import me.kimovoid.tweakimo.freecam.FreeCamController;
+import me.kimovoid.tweakimo.controllers.FreeCamController;
 import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.client.renderer.culling.ICamera;
 import net.minecraft.entity.EntityLivingBase;

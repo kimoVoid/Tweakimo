@@ -1,7 +1,7 @@
 package me.kimovoid.tweakimo.mixin.actionbar;
 
 import me.kimovoid.tweakimo.Tweakimo;
-import me.kimovoid.tweakimo.freecam.FreeCamController;
+import me.kimovoid.tweakimo.controllers.FreeCamController;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiIngame;
