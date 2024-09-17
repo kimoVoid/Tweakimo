@@ -18,6 +18,7 @@
     "freecam.RenderManagerMixin",
     "inventorycenter.InventoryEffectRendererMixin",
     "reconnectbutton.GuiDisconnectedMixin",
+    "reconnectbutton.GuiIngameMenuMixin",
     "reconnectbutton.MinecraftMixin",
     "shorttab.GuiIngameMixin",
     "sidebar.GuiIngameMixin",
