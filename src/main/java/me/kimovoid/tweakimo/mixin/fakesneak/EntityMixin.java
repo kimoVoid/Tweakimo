@@ -35,8 +35,7 @@ public class EntityMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/World;getCollidingBoundingBoxes(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/AxisAlignedBB;)Ljava/util/List;",
-                    ordinal = 3,
-                    shift = At.Shift.BEFORE
+                    ordinal = 0
             )
     )
     private boolean setFlag(boolean flag) {
