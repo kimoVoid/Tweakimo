@@ -69,14 +69,14 @@ public abstract class GuiIngameMixin extends Gui {
             int j1 = y - 3 + 2;
             drawRect(i2 - 2, i1, j1, i1 + fr.FONT_HEIGHT, 1342177280);
 
-            this.renderText(fr, s1, i2, i1, 0xFF000000);
-            this.renderText(fr, s2, j1 - fr.getStringWidth(s2), i1, 0xFF000000);
+            this.renderText(fr, s1, i2, i1, 0xFFFFFFFF);
+            this.renderText(fr, s2, j1 - fr.getStringWidth(s2), i1, 0xFFFFFFFF);
 
             if (l == collection.size()) {
                 String title = objective.getDisplayName();
                 drawRect(i2 - 2, i1 - fr.FONT_HEIGHT - 1, j1, i1 - 1, 1610612736);
                 drawRect(i2 - 2, i1 - 1, j1, i1, 1342177280);
-                this.renderText(fr, title, i2 + width / 2 - fr.getStringWidth(title) / 2, i1 - fr.FONT_HEIGHT, 0xFF000000);
+                this.renderText(fr, title, i2 + width / 2 - fr.getStringWidth(title) / 2, i1 - fr.FONT_HEIGHT, 0xFFFFFFFF);
             }
         }
     }
